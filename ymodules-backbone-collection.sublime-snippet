@@ -1,0 +1,76 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @param    {Object}    window
+ * @param    {Object}    document
+ * @param    {Object}    modules
+ */
+!function ( window, document, modules, undefined ) {
+    'use strict';
+
+    var
+        /**
+         * @param       {Function}  provide     Async module export
+         * @param       {Object}    Backbone
+         */
+        pageView = function ( provide, Backbone ) {
+            var
+                /**
+                 * @constructor     module:${1:moduleName}~
+                 *
+                 * @see             {@link http://www.backbonejs.org/#Collection}
+                 */
+                ${2:className} = Backbone.Collection.extend(/** @lends module:${1:moduleName}~${2:className} */{
+
+                    /**
+                     * @member      model
+                     * @memberOf    module:${1:moduleName}~${2:className}#
+                     * @type        {Object}
+                     */
+                    model: ${3:modelName},
+
+                    /**
+                     * @classdesc   ${5:classDesc}
+                     * @memberOf    module:${1:moduleName}~
+                     * @augments    module:Backbone.Collection
+                     * @constructs  ${2:className}
+                     */
+                    initialize: function( options ) {
+                        ${0:// initialize body}
+                    }
+
+                });
+            // end of vars
+
+            provide(${2:className});
+        };
+    // end of vars
+
+
+    /**
+     * ${4:moduleDesc}
+     *
+     * @module      ${1:moduleName}
+     * @version     0.1
+     *
+     * @requires    Backbone
+     *
+     * @author      Zaytsev Alexandr
+     *
+     * [About YM Modules]{@link https://github.com/ymaps/modules}
+     */
+    modules.define(
+        '${1:moduleName}',  // Module name
+        ['Backbone'],       // Dependies
+        module              // Module realization
+    );
+}(
+    this,
+    this.document,
+    this.modules
+);
+]]></content>
+    <tabTrigger><![CDATA[ybc]]></tabTrigger>
+    <scope>source.js</scope>
+    <description>JS YModules with Backbone Collection</description>
+</snippet>

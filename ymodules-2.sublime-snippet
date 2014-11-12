@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @module      ${1:moduleName}
+ * @version     0.1
+ *
+ * @author      Zaytsev Alexandr
+ *
+ * [About YM Modules]{@link https://github.com/ymaps/modules}
+ */
+!function( window, document, modules, module ) {
+    modules.define(
+        '${1:moduleName}',                      // Module name
+        [],                                     // Dependies
+        module.bind(window, document, modules)  // Module realization
+    );
+}(
+    this,
+    this.document,
+    this.modules,
+    function( window, document, modules, provide ) {
+        'use strict';
+
+        var
+            /**
+             * @method      ${2:initialize}
+             * @memberOf    module:${1:moduleName}#
+             */
+            ${2:initialize} = function() {
+                // body...
+            };
+        // end of vars
+
+        provide({
+            ${2:initialize}: ${2:initialize}
+        });
+    }
+);
+]]></content>
+    <tabTrigger><![CDATA[ym2]]></tabTrigger>
+    <scope>source.js</scope>
+    <description>JS YModules new version</description>
+</snippet>

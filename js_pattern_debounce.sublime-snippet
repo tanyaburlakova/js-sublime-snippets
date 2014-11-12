@@ -1,0 +1,31 @@
+<snippet>
+  <content><![CDATA[
+${1:functionName} = (function () {
+    var
+        timeWindow = ${2:500}, // time in ms
+        timeout,
+
+        ${1:functionName} = function ( ${3:args} ) {
+            ${4: // your code goes here}
+        };
+    // end of vars
+
+    return function() {
+        var
+            context = this,
+            args = arguments;
+        // end of vars
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(function() {
+            ${1:functionName}.apply(context, args);
+        }, timeWindow);
+    };
+}());
+
+]]></content>
+  <tabTrigger><![CDATA[debounce]]></tabTrigger>
+  <scope>source.js</scope>
+  <description>Debounced function</description>
+</snippet>

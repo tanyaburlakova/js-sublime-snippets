@@ -1,0 +1,73 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * ${8:Desc}
+ *
+ * @this    {${1:ConstructorName}}
+ *
+ * @param   {${9:Type}} ${2:args}   ${10:args}
+ *
+ * @constructor
+ */
+var
+    ${1:ConstructorName} = (function() {
+        'use strict';
+
+        var
+            /**
+             * @constructs   ${1:ConstructorName}
+             */
+            ${1:ConstructorName} = function ${1:ConstructorName}( ${2:args} ) {
+                // enforces new
+                if ( !(this instanceof ${1:ConstructorName}) ) {
+                    return new ${1:ConstructorName}(${2:args});
+                }
+
+                ${3:// constructor body}
+            },
+
+
+            /**
+             * ==============================
+             * ========PRIVATE METHODS=======
+             * ==============================
+             */
+
+            /**
+             * @private
+             */
+            privateMethod = function() {
+
+            };
+        // end of vars
+
+
+        /**
+         * ==============================
+         * ========PUBLIC METHODS========
+         * ==============================
+         */
+
+        ${4:
+        /**
+         * ${11:Desc}
+         *
+         * @this    {${1:ConstructorName}\}
+         * @public
+         *
+         * @param   {${12:Type}\}   ${6:args}   ${13:args}
+         */
+        ${1:ConstructorName}.prototype.${5:methodName} = function( ${6:args} ) {
+            ${7:// method body}
+        \}};
+
+        return ${1:ConstructorName};
+
+    }());
+// end of vars
+
+]]></content>
+    <tabTrigger><![CDATA[constructor]]></tabTrigger>
+    <scope>source.js</scope>
+    <description>JS constructor pattern</description>
+</snippet>

@@ -1,0 +1,54 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @param    {Object}    window
+ * @param    {Object}    document
+ * @param    {Object}    modules
+ */
+!function ( window, document, modules, undefined ) {
+    'use strict';
+
+    var
+        /**
+         * @param       {Function}  provide     Async module export
+         */
+        module = function ( provide ) {
+            var
+                /**
+                 * ${2:// moduleRealization description}
+                 */
+                moduleRealization = function() {
+                    ${0:// method body}
+                };
+            // end of vars
+
+            provide(moduleRealization);
+        };
+    // end of vars
+
+
+    /**
+     * ${2:moduleDesc}
+     *
+     * @module      ${1:moduleName}
+     * @version     0.1
+     *
+     * @author      Zaytsev Alexandr
+     *
+     * [About YM Modules]{@link https://github.com/ymaps/modules}
+     */
+    modules.define(
+        '${1:moduleName}',  // Module name
+        [],                 // Dependies
+        module              // Module realization
+    );
+}(
+    this,
+    this.document,
+    this.modules
+);
+]]></content>
+    <tabTrigger><![CDATA[ymodule]]></tabTrigger>
+    <scope>source.js</scope>
+    <description>JS YModules</description>
+</snippet>

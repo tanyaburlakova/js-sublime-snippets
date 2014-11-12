@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+${1:functionName} = (function () {
+    var
+        timeWindow = ${2:500}, // time in ms
+        lastExecution = new Date( (new Date()).getTime() - timeWindow ),
+
+        ${1:functionName} = function ${1:functionName}( ${3:args} ) {
+            ${4: // your code goes here}
+        };
+    // end of vars
+
+    return function() {
+        if ( (lastExecution.getTime() + timeWindow) <= (new Date()).getTime() ) {
+            lastExecution = new Date();
+            return ${1:functionName}.apply(this, arguments);
+        }
+    };
+}());]]></content>
+  <tabTrigger><![CDATA[throttle]]></tabTrigger>
+  <scope>source.js</scope>
+  <description>Throttled function</description>
+</snippet>
